@@ -1,0 +1,120 @@
+﻿<Application x:Class="QuestTemplate.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:QuestTemplate"
+             Startup="ApplicationStartup">
+	
+    <Application.Resources>
+
+		<Style x:Key="MenuButton" 
+					 TargetType="Button">
+			<Style.Setters>
+				<Setter Property="Opacity" Value="0.8"/>
+				<Setter Property="Margin" Value="5" />
+				<Setter Property="Focusable" Value="False" />
+				<Setter Property="Template">
+					<Setter.Value>
+						<ControlTemplate>
+							<StackPanel Orientation="Horizontal">
+								<Label Content="Меню" Foreground="Black" Opacity="0.9"/>
+								<Image Height="23" Width="23" Source="/QuestTemplate;component/Resources/menu.png" Opacity="0.8"/>
+							</StackPanel>
+						</ControlTemplate>
+					</Setter.Value>
+				</Setter>
+			</Style.Setters>
+			<Style.Triggers>
+				<Trigger Property="IsMouseOver" Value="true">
+					<Setter Property="Opacity" Value="1"/>
+				</Trigger>
+			</Style.Triggers>
+		</Style>
+
+		<Style x:Key="TextBlockForQuestAnswerButton"
+					 TargetType="TextBlock">
+			<Setter Property="Margin" Value="5"/>
+			<Setter Property="TextWrapping" Value="Wrap"/>
+			<Setter Property="FontSize" Value="15"/>
+			<Setter Property="Foreground" Value="Black"/>
+		</Style>
+
+		<Style x:Key="SelectButton"
+					 TargetType="Button" >
+
+			<Setter Property="Width" Value="400"/>
+			<Setter Property="Height" Value="75"/>
+			<Setter Property="Focusable" Value="False"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="Button">
+						<Border                            
+        					x:Name="Border"  
+				     			RenderTransformOrigin="0.5,0.5"
+						    	CornerRadius="20" 
+        					Background="WhiteSmoke"   
+        				  Opacity="0.7" BorderThickness="1" BorderBrush="Gray">
+							<ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+						</Border>
+
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsMouseOver" Value="true">
+								<Setter TargetName="Border" Property="Background" Value="WhiteSmoke"/>
+								<Setter TargetName="Border" Property="Opacity" Value="0.9"/>
+								<Setter Property="Effect">
+									<Setter.Value>
+										<DropShadowEffect RenderingBias="Quality" Color="Gray" ShadowDepth="0" Opacity="0.7"/>
+									</Setter.Value>
+								</Setter>
+							</Trigger>
+
+							<Trigger Property="IsPressed" Value="true">
+								<Setter TargetName="Border" Property="Background" Value="WhiteSmoke"/>
+								<Setter TargetName="Border" Property="Opacity" Value="1"/>
+							</Trigger>
+						</ControlTemplate.Triggers>
+
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+
+		<Style x:Key="QuestAnswerButton"
+					 TargetType="Button" >
+
+			<Setter Property="Width" Value="200"/>
+			<Setter Property="Height" Value="45"/>
+			<Setter Property="Focusable" Value="False"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="Button">
+						<Border                            
+        					x:Name="Border"  
+				     			RenderTransformOrigin="0.5,0.5"
+						    	CornerRadius="20" 
+        					Background="WhiteSmoke"   
+        				  Opacity="0.7" BorderThickness="1" BorderBrush="Gray">
+							<ContentPresenter  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+						</Border>
+
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsMouseOver" Value="true">
+								<Setter TargetName="Border" Property="Opacity" Value="0.9"/>
+								<Setter Property="Effect">
+									<Setter.Value>
+										<DropShadowEffect RenderingBias="Quality" Color="Gray" ShadowDepth="0" Opacity="0.7"/>
+									</Setter.Value>
+								</Setter>
+							</Trigger>
+
+							<Trigger Property="IsPressed" Value="true">
+								<Setter TargetName="Border" Property="Opacity" Value="1"/>
+							</Trigger>
+						</ControlTemplate.Triggers>
+
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+
+	</Application.Resources>
+</Application>
